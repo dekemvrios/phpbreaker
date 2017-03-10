@@ -1,6 +1,6 @@
 <?php
 
-namespace Solis\Tools\Trouble;
+namespace Solis\Breaker;
 
 /**
  * Classe responsável por manipular as operações 

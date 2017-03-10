@@ -2,7 +2,7 @@
 
 require_once '../../vendor/autoload.php';
 
-use \Solis\Tools\Trouble\TException;
+use \Solis\Breaker\TException;
 
 try {
 
