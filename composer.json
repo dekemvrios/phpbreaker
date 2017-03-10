@@ -6,7 +6,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Solis\\Breaker\\": "app/src/lib"
+            "Solis\\Breaker\\": "app/src/lib/breaker"
         }
     }
 }
