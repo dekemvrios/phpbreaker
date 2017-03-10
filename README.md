@@ -4,5 +4,5 @@ Ferramenta para tratamento de exceções
 
 ## Instalação com Composer
 ```
-composer require solis/troublebraker
+composer require solis/breaker
 ``` 
