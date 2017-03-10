@@ -1,0 +1,12 @@
+{
+    "name": "solis/troublebraker",
+    "description": "Exception handling toolset",
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Solis\\Tools\\": "app/src/lib"
+        }
+    }
+}
