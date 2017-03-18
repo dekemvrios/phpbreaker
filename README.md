@@ -14,12 +14,11 @@ composer require solis/breaker
 ``` 
 
 ## How This Works
-\Solis\Breaker\TException extends the \Exception class separate the information about the error in two objects
+\Solis\Breaker\TException extends the \Exception class and separates the exception information in two objects
 * $aInfoError - contains the information that will be returned by default
 * $aInfoDebug - contains the information that will be returned if the debug mode of the class is activated
 
-By default, it returns a associative array representing the information about the error, but is possible to set the
-default return format to json.
+By default, it returns a associative array, but is possible to set the default return format to json.
 
 ```
 {
