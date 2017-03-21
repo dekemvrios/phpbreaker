@@ -39,4 +39,8 @@ $error and $debug objects are instances of \Solis\Breaker\TInfo class. Their str
 $ex->getError()->addEntry('help', 'contact suport');
 
 $ex->getDebug()->addEntry('application', 'app test class');
+
+$ex->getError()->removeEntry('message');
+
+$ex->getDebug()->removeEntry('class');
 ```
