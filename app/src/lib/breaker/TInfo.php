@@ -20,11 +20,28 @@ class TInfo
      * 
      * @param array $info
      */
-    public function __construct($info = [])
+    private function __construct($info = [])
     {
         $this->setInfo($info);
     }
-    
+
+    /**
+     * build
+     * 
+     * Factory method
+     * 
+     * @param type $info
+     * @return \static
+     */
+    public static function build($info = [])
+    {
+        if (!is_array($info)) {
+            return new static();
+        }
+
+        return new static($info);
+    }
+
     /**
      * setInfo
      * 
