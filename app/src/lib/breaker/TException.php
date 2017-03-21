@@ -7,6 +7,7 @@ use Solis\Breaker\TInfo;
 /**
  * TException
  * 
+ * @package Solis\Breaker\TException
  */
 class TException extends \Exception
 {
@@ -28,22 +29,21 @@ class TException extends \Exception
     /**
      * __construct
      * 
-     * @param mixed $class
-     * @param mixed $method
-     * @param mixed $reason
-     * @param mixed $code
+     * @param mixed $class class name
+     * @param mixed $method method name
+     * @param mixed $reason explanation for TException
+     * @param mixed $code error code
      */
     public function __construct($class, $method, $reason, $code)
     {
-        // é necessário chamar o construtor da classe parent para o correto funcionamento da classe
         parent::__construct('');
 
-        // create new Tinfo object to store default error information                
+        // create new Tinfo object to store default TException information                
         $this->error = Tinfo::build([
                     'code' => $code, 'message' => $reason
         ]);
 
-        // create new Tinfo object to store debug error information
+        // create new Tinfo object to store debug TException information
         $this->debug = Tinfo::build([
                     'class' => $class, 'method' => $method
         ]);
@@ -52,7 +52,7 @@ class TException extends \Exception
     /**
      * getError
      * 
-     * Return the default information about the throwed exception
+     * Return the default information about the throwed TException
      * 
      * @return TInfo
      */
@@ -64,7 +64,7 @@ class TException extends \Exception
     /**
      * getDebug
      * 
-     * Return the Debug information about the throwed exception
+     * Return the Debug information about the throwed TException
      * 
      * @return TInfo
      */
@@ -75,6 +75,8 @@ class TException extends \Exception
 
     /**
      * toArray
+     * 
+     * Return default and debug information about the throwed TException
      * 
      * @return array
      */
@@ -89,6 +91,8 @@ class TException extends \Exception
     /**
      * toJson
      * 
+     * Return a json representation of the default and debug information about the throwed TException
+     * 
      * @return string
      */
     public function toJson()
@@ -99,7 +103,9 @@ class TException extends \Exception
     /**
      * getThinTrace
      * 
-     * @param array $info
+     * Return the TException stack trace as an array
+     * 
+     * @param array $info keys used to filter the trace
      */
     public function getThinTrace($info = null)
     {
@@ -115,19 +121,21 @@ class TException extends \Exception
     /**
      * filterArrayKeys
      * 
-     * @param array $arrayItem
+     * remove array keys that are not specified in $data
+     * 
+     * @param array $array
      * @param array $data
      * @return array
      */
-    private function filterArrayKeys($arrayItem, $data)
+    private function filterArrayKeys($array, $data)
     {
-        foreach (array_keys($arrayItem) as $key) {
+        foreach (array_keys($array) as $key) {
             if (!in_array($key, $data)) {
-                unset($arrayItem[$key]);
+                unset($array[$key]);
             }
         }
 
-        return $arrayItem;
+        return $array;
     }
 
 }

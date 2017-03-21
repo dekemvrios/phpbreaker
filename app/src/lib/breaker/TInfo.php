@@ -5,12 +5,14 @@ namespace Solis\Breaker;
 /**
  * TInfo
  * 
+ * @package Solis\Breaker\TInfo
  */
 class TInfo
 {
 
     /**
-     *
+     * $info
+     * 
      * @var array
      */
     private $info;
@@ -30,7 +32,7 @@ class TInfo
      * 
      * Factory method
      * 
-     * @param type $info
+     * @param array $info
      * @return \static
      */
     public static function build($info = [])
@@ -66,7 +68,7 @@ class TInfo
      * addEntry
      * 
      * @param string $key
-     * @param array|string|int $value
+     * @param mixed $value
      */
     public function addEntry($key, $value)
     {
