@@ -2,6 +2,7 @@
 
 namespace Solis\Breaker;
 
+use Solis\Breaker\TinfoFactory;
 use Solis\Breaker\TInfo;
 
 /**
@@ -39,12 +40,12 @@ class TException extends \Exception
         parent::__construct('');
 
         // create new Tinfo object to store default error information                
-        $this->error = TInfo::build([
+        $this->error = TinfoFactory::build([
                     'code' => $code, 'message' => $reason
         ]);
 
         // create new Tinfo object to store debug error information
-        $this->debug = TInfo::build([
+        $this->debug = TinfoFactory::build([
                     'class' => $class, 'method' => $method
         ]);
     }

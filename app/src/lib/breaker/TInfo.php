@@ -20,21 +20,11 @@ class TInfo
      * 
      * @param array $info
      */
-    private function __construct($info)
+    public function __construct($info)
     {
         $this->setInfo($info);
     }
-
-    /**
-     * register
-
-     * @param array $info
-     */
-    public static function build($info)
-    {
-        return new self($info);
-    }
-
+    
     /**
      * setInfo
      * 
