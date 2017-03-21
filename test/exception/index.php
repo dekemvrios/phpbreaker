@@ -5,13 +5,18 @@ require_once '../../vendor/autoload.php';
 use \Solis\Breaker\TException;
 
 try {
+    require_once 'Client.php';
 
-    throw new TException('index', 'teste', 'Teste de aplicacao de exception', TException::ERR_BAD_REQUEST);
+    $client = new Client('Client');
 } catch (TException $ex) {
-    header('Content-type:application/json');
 
-    $ex->setReturnAsJson(true);
+    // add trace in debug information
+    $ex->getDebug()->addInfoEntry(
+            'trace', $ex->getThinTrace(['file', 'line']) //'function', 'class', 'type', 'args']
+    );
 
-    echo $ex->getExceptionInfo();
+    echo json_encode([
+        'error' => $ex->getError()->getInfo(),
+        'debug' => $ex->getDebug()->getInfo(),
+    ]);
 }
-
