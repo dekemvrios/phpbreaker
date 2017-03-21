@@ -14,7 +14,11 @@ class TinfoFactory
      */
     public static function build($info)
     {
-        return new TInfo($info);
+        if (is_array($info)) {
+            return new TInfo($info);
+        }
+
+        return TInfo();
     }
 
 }

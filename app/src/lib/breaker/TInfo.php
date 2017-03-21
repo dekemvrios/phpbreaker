@@ -20,7 +20,7 @@ class TInfo
      * 
      * @param array $info
      */
-    public function __construct($info)
+    public function __construct($info = [])
     {
         $this->setInfo($info);
     }
