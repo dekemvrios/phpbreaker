@@ -30,9 +30,9 @@ class TInfo
 
      * @param array $info
      */
-    public static function register($info)
+    public static function build($info)
     {
-        return new static($info);
+        return new self($info);
     }
 
     /**

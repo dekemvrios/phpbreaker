@@ -39,12 +39,12 @@ class TException extends \Exception
         parent::__construct('');
 
         // create new Tinfo object to store default error information                
-        $this->error = TInfo::register([
+        $this->error = TInfo::build([
                     'code' => $code, 'message' => $reason
         ]);
 
         // create new Tinfo object to store debug error information
-        $this->debug = TInfo::register([
+        $this->debug = TInfo::build([
                     'class' => $class, 'method' => $method
         ]);
     }
