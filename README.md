@@ -33,17 +33,10 @@ TException extends the \Exception class and separates the exception information 
 * $error - stores the $code and $reason especified in TException constructor
 * $debug - stores the $class and $method especified in TException constructor
 
-By default, it returns a associative array, but is possible to set the default return format to json.
+$error and $debug objects are instances of \Solis\Breaker\TInfo class. Their structure allows to add or remove information to it as needed.
 
 ```
-{
-  "erro": {
-    "status": 400,
-    "mensagem": "Teste de aplicacao de exception"
-  },
-  "debug": {
-    "classe": "index",
-    "metodo": "teste"
-  }
-}
+$ex->getError()->addEntry('help', 'contact suport');
+
+$ex->getDebug()->addEntry('application', 'app test class');
 ```
