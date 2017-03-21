@@ -28,25 +28,25 @@ class TException extends \Exception
     /**
      * __construct
      * 
-     * @param string $class
-     * @param string $method
-     * @param string|array $reason
-     * @param string|int $code
+     * @param mixed $class
+     * @param mixed $method
+     * @param mixed $reason
+     * @param mixed $code
      */
     public function __construct($class, $method, $reason, $code)
     {
         // é necessário chamar o construtor da classe parent para o correto funcionamento da classe
         parent::__construct('');
-        
-        // create new Tinfo object to store error information
-        $this->error = new TInfo([]);
-        $this->getError()->addInfoEntry('code', $code);
-        $this->getError()->addInfoEntry('message', $reason);
 
-        // create new Tinfo object to store debug information
-        $this->debug = new TInfo([]);
-        $this->getDebug()->addInfoEntry('class', $class);
-        $this->getDebug()->addInfoEntry('method', $method);
+        // create new Tinfo object to store default error information                
+        $this->error = TInfo::register([
+                    'code' => $code, 'message' => $reason
+        ]);
+
+        // create new Tinfo object to store debug error information
+        $this->debug = TInfo::register([
+                    'class' => $class, 'method' => $method
+        ]);
     }
 
     /**
@@ -74,6 +74,29 @@ class TException extends \Exception
     }
 
     /**
+     * toArray
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            "error" => $this->getError()->getInfo(),
+            "debug" => $this->getDebug()->getInfo()
+        ];
+    }
+
+    /**
+     * toJson
+     * 
+     * @return string
+     */
+    public function toJson()
+    {
+        return json_encode($this->toArray(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    }
+
+    /**
      * getThinTrace
      * 
      * @param array $info
@@ -82,11 +105,7 @@ class TException extends \Exception
     {
         if (!empty($info)) {
             return array_map(function($item) use ($info) {
-                $item = $this->unsetArrayByData($item, $info);
-
-                if (!empty($item)) {
-                    return $item;
-                }
+                return $this->filterArrayKeys($item, $info);
             }, $this->getTrace());
         }
 
@@ -94,13 +113,13 @@ class TException extends \Exception
     }
 
     /**
-     * unsetArrayByData
+     * filterArrayKeys
      * 
      * @param array $arrayItem
      * @param array $data
      * @return array
      */
-    private function unsetArrayByData($arrayItem, $data)
+    private function filterArrayKeys($arrayItem, $data)
     {
         foreach (array_keys($arrayItem) as $key) {
             if (!in_array($key, $data)) {

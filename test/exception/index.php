@@ -11,12 +11,9 @@ try {
 } catch (TException $ex) {
 
     // add trace in debug information
-    $ex->getDebug()->addInfoEntry(
+    $ex->getDebug()->addEntry(
             'trace', $ex->getThinTrace(['file', 'line']) //'function', 'class', 'type', 'args']
     );
 
-    echo json_encode([
-        'error' => $ex->getError()->getInfo(),
-        'debug' => $ex->getDebug()->getInfo(),
-    ]);
+    echo $ex->toJson();
 }

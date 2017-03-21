@@ -16,15 +16,27 @@ class TInfo
     private $info;
 
     /**
+     * __construct
      * 
      * @param array $info
      */
-    public function __construct($info)
+    private function __construct($info)
     {
         $this->setInfo($info);
     }
 
     /**
+     * register
+
+     * @param array $info
+     */
+    public static function register($info)
+    {
+        return new static($info);
+    }
+
+    /**
+     * setInfo
      * 
      * @param array $value
      */
@@ -34,6 +46,7 @@ class TInfo
     }
 
     /**
+     * getInfo
      * 
      * @return array
      */
@@ -43,21 +56,23 @@ class TInfo
     }
 
     /**
+     * addEntry
      * 
      * @param string $key
      * @param array|string|int $value
      */
-    public function addInfoEntry($key, $value)
+    public function addEntry($key, $value)
     {
         $this->info[$key] = $value;
     }
 
     /**
+     * getEntry
      * 
      * @param type $key
      * @return boolean
      */
-    public function getInfoEntry($key)
+    public function getEntry($key)
     {
         if (!array_key_exists($key, $this->info)) {
             return false;
@@ -67,11 +82,12 @@ class TInfo
     }
 
     /**
+     * toJson
      * 
      * @return string
      */
     public function toJson()
-    {        
+    {
         return json_encode($this->getInfo(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 
