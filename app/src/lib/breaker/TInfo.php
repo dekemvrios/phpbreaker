@@ -69,16 +69,23 @@ class TInfo
      * 
      * @param string $key
      * @param mixed $value
+     * @return boolean
      */
     public function addEntry($key, $value)
     {
+        if (array_key_exists($key, $this->info)) {
+            return false;
+        }
+
         $this->info[$key] = $value;
+
+        return true;
     }
 
     /**
      * getEntry
      * 
-     * @param type $key
+     * @param string $key
      * @return mixed
      */
     public function getEntry($key)
@@ -88,6 +95,23 @@ class TInfo
         }
 
         return $this->info[$key];
+    }
+
+    /**
+     * removeEntry
+     * 
+     * @param string $key
+     * @return boolean
+     */
+    public function removeEntry($key)
+    {
+        if (!array_key_exists($key, $this->info)) {
+            return false;
+        }
+
+        unset($this->info[$key]);
+
+        return true;
     }
 
     /**
