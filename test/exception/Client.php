@@ -12,7 +12,7 @@ class Client
 
     public function setName($name)
     {
-        throw new TException('index', 'teste', 'Teste de aplicacao de exception', 500);
+        throw new TException(__CLASS__, __METHOD__, 'Teste de aplicacao de exception', 500);
     }
 
 }

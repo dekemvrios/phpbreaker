@@ -5,9 +5,18 @@ require_once '../../vendor/autoload.php';
 use \Solis\Breaker\TException;
 
 try {
-    require_once 'Client.php';
 
-    $client = new Client('Client');
+    class Client
+    {
+
+        public function __construct()
+        {
+            throw new TException(__CLASS__, __METHOD__, 'TException class test', 500);
+        }
+
+    }
+
+    $client = new Client();
 } catch (TException $ex) {
 
     // add trace in debug information
