@@ -44,3 +44,33 @@ $ex->getError()->removeEntry('message');
 
 $ex->getDebug()->removeEntry('class');
 ```
+
+Its possible to return $error or $debug information individually as array or json, or get the full Exception representation as array or json.
+
+```
+// get the full TException representation as json
+$ex->toJson();
+
+// get the $error representation as json
+$ex->getError()->toJson();
+
+// get the $debug representation as json
+$ex->getDebug()->toJson();
+```
+
+The TException json representation will be like the following
+
+```
+{
+  "error": {
+    "code": 500,
+    "message": "TException class test"
+  },
+  "debug": {
+    "class": "Client",
+    "method": "Client::__construct"
+  }
+}
+```
+
+
