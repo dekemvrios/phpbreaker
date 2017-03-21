@@ -70,7 +70,7 @@ class TInfo
      * getEntry
      * 
      * @param type $key
-     * @return boolean
+     * @return mixed
      */
     public function getEntry($key)
     {
