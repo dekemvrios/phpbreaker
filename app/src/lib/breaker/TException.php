@@ -83,8 +83,8 @@ class TException extends \Exception
     public function toArray()
     {
         return [
-            "error" => $this->getError()->getInfo(),
-            "debug" => $this->getDebug()->getInfo()
+            "error" => $this->getError()->toArray(),
+            "debug" => $this->getDebug()->toArray()
         ];
     }
 
@@ -101,13 +101,13 @@ class TException extends \Exception
     }
 
     /**
-     * getThinTrace
+     * getTTrace
      * 
      * Return the TException stack trace as an array
      * 
      * @param array $info keys used to filter the trace
      */
-    public function getThinTrace($info = null)
+    public function getTTrace($info = null)
     {
         if (!empty($info)) {
             return array_map(function($item) use ($info) {

@@ -124,4 +124,14 @@ class TInfo
         return json_encode($this->getInfo(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 
+    /**
+     * toArray
+     * 
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->getInfo();
+    }
+
 }

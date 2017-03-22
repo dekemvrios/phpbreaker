@@ -19,10 +19,8 @@ try {
     $client = new Client();
 } catch (TException $ex) {
 
-    // add trace in debug information
-    $ex->getDebug()->addEntry(
-            'trace', $ex->getThinTrace(['file', 'line']) //'function', 'class', 'type', 'args']
-    );
-
     echo $ex->toJson();
+
+    //echo $ex->getDebug()->toJson();
+    //echo $ex->getError()->toJson();   
 }
