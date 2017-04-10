@@ -45,7 +45,7 @@ class TException extends \Exception
 
         // create new Tinfo object to store debug TException information
         $this->debug = Tinfo::build([
-                    'class' => $class, 'method' => $method
+                    'class' => $class, 'method' => $method, 'trace' => $this->getTrace()
         ]);
     }
 
