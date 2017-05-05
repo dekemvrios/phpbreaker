@@ -1,5 +1,4 @@
 # README
-[![Code Climate](https://codeclimate.com/github/realfabecker/breaker/badges/gpa.svg)](https://codeclimate.com/github/realfabecker/breaker)
 
 ## What is Breaker
 Breaker package contains the TException class which extends the default php \Exception class. It organizes the information in throwed exceptions allowing to define how the information will be displayed.
@@ -10,7 +9,7 @@ Breaker package contains the TException class which extends the default php \Exc
 ## How To Install?
 This package was designed to be installed with composer dependency management tool.
 ```
-composer require solis/breaker
+composer require solis/phpbreaker "dev-master"
 ``` 
 
 ## How To Use it?

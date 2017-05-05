@@ -11,7 +11,12 @@ try {
 
         public function __construct()
         {
-            throw new TException(__CLASS__, __METHOD__, 'TException class test', 500);
+            throw new TException(
+                __CLASS__,
+                __METHOD__,
+                'TException class test',
+                500
+            );
         }
 
     }

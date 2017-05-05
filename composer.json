@@ -1,12 +1,9 @@
 {
-    "name": "solis/breaker",
-    "description": "Exception handling toolset",
-    "require": {
-        "php": ">=5.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "Solis\\Breaker\\": "app/src/lib/breaker"
-        }
+  "name": "solis/phpbreaker",
+  "description": "PhpBreaker is a exception handling toolset",
+  "autoload": {
+    "psr-4": {
+      "Solis\\Breaker\\": "app/src/lib/breaker"
     }
+  }
 }
