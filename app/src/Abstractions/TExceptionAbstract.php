@@ -1,52 +1,46 @@
 <?php
 
-namespace Solis\Breaker;
+namespace Solis\Breaker\Abstractions;
 
-use Solis\Breaker\TInfo;
+use Solis\Breaker\Contracts\TInfoContract;
 
 /**
  * TException
  * 
  * @package Solis\Breaker\TException
  */
-class TException extends \Exception
+abstract class TExceptionAbstract extends \Exception
 {
 
     /**
-     * Contains default information about the throwed exception
+     * Contains default information about the exception
      * 
-     * @var TInfo
+     * @var TInfoContract
      */
-    private $error;
+    protected $error;
 
     /**
-     * Contains information about the throwed exception displayed in debug mode
+     * Contains information about the exception displayed in debug mode
      * 
-     * @var TInfo
+     * @var TInfoContract
      */
-    private $debug;
+    protected $debug;
 
     /**
-     * __construct
-     * 
-     * @param mixed $class class name
-     * @param mixed $method method name
-     * @param mixed $reason explanation for TException
-     * @param mixed $code error code
+     * TExceptionAbstract constructor.
+     *
+     * @param TInfoContract $error
+     * @param TInfoContract $debug
      */
-    public function __construct($class, $method, $reason, $code)
+    public function __construct($error, $debug)
     {
-        parent::__construct('');
+        parent::__construct('exception owner ' . __CLASS__);
 
         // create new Tinfo object to store default TException information                
-        $this->error = Tinfo::build([
-                    'code' => $code, 'message' => $reason
-        ]);
+        $this->error = $error;
 
         // create new Tinfo object to store debug TException information
-        $this->debug = Tinfo::build([
-                    'class' => $class, 'method' => $method, 'trace' => $this->getTrace()
-        ]);
+        $this->debug = $debug;
     }
 
     /**
@@ -54,7 +48,7 @@ class TException extends \Exception
      * 
      * Return the default information about the throwed TException
      * 
-     * @return TInfo
+     * @return TInfoContract
      */
     public function getError()
     {
@@ -66,7 +60,7 @@ class TException extends \Exception
      * 
      * Return the Debug information about the throwed TException
      * 
-     * @return TInfo
+     * @return TInfoContract
      */
     public function getDebug()
     {
@@ -106,8 +100,10 @@ class TException extends \Exception
      * Return the TException stack trace as an array
      * 
      * @param array $info keys used to filter the trace
+     *
+     * @return array
      */
-    public function getTTrace($info = null)
+    protected function getTTrace($info = null)
     {
         if (!empty($info)) {
             return array_map(function($item) use ($info) {
@@ -127,7 +123,7 @@ class TException extends \Exception
      * @param array $data
      * @return array
      */
-    private function filterArrayKeys($array, $data)
+    protected function filterArrayKeys($array, $data)
     {
         foreach (array_keys($array) as $key) {
             if (!in_array($key, $data)) {
@@ -137,5 +133,5 @@ class TException extends \Exception
 
         return $array;
     }
-
 }
+

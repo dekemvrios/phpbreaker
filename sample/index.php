@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use \Solis\Breaker\TException;
 
@@ -14,7 +14,7 @@ try {
             throw new TException(
                 __CLASS__,
                 __METHOD__,
-                'TException class test',
+                'TException class sample',
                 500
             );
         }
@@ -23,9 +23,14 @@ try {
 
     $client = new Client();
 } catch (TException $ex) {
+    //echo $ex->toJson();
 
-    echo $ex->toJson();
+    $ex->getError()->setEntry('message', uniqid(rand(), true));
+    $ex->getError()->addEntry('date', Date('Y-m-d H:i:s'));
+    $ex->getError()->removeEntry('code');
+    echo $ex->getError()->toJson();
 
+    $ex->getDebug()->removeEntry('trace');
     //echo $ex->getDebug()->toJson();
-    //echo $ex->getError()->toJson();   
+
 }

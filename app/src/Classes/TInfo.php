@@ -1,13 +1,15 @@
 <?php
 
-namespace Solis\Breaker;
+namespace Solis\Breaker\Classes;
+
+use Solis\Breaker\Contracts\TInfoContract;
 
 /**
  * TInfo
  * 
  * @package Solis\Breaker\TInfo
  */
-class TInfo
+final class TInfo implements TInfoContract
 {
 
     /**
@@ -66,9 +68,10 @@ class TInfo
 
     /**
      * addEntry
-     * 
-     * @param string $key
-     * @param mixed $value
+     *
+     * @param string  $key
+     * @param mixed   $value
+     *
      * @return boolean
      */
     public function addEntry($key, $value)
@@ -77,6 +80,19 @@ class TInfo
             return false;
         }
 
+        $this->info[$key] = $value;
+
+        return true;
+    }
+
+    /**
+     * @param string $key
+     * @param mixed  $value
+     *
+     * @return bool
+     */
+    public function setEntry($key, $value)
+    {
         $this->info[$key] = $value;
 
         return true;

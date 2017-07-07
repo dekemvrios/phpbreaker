@@ -1,9 +1,9 @@
 {
   "name": "solis/phpbreaker",
-  "description": "PhpBreaker is a exception handling toolset",
+  "description": "PhpBreaker is a exception handling toolkit",
   "autoload": {
     "psr-4": {
-      "Solis\\Breaker\\": "app/src/lib/breaker"
+      "Solis\\Breaker\\": "app/src"
     }
   }
 }
