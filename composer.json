@@ -1,6 +1,17 @@
 {
   "name": "solis/phpbreaker",
   "description": "PhpBreaker is a exception handling toolkit",
+  "license": [
+    "GPL-3.0+",
+    "LGPL-3.0+"
+  ],
+  "authors": [
+    {
+      "name": "Rafael Becker",
+      "email": "rafael@beecker.com.br",
+      "role": "Developer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Solis\\Breaker\\": "app/src"
