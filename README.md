@@ -1,5 +1,8 @@
 # README
 
+[![Latest Version on Packagist][ico-version]][https://packagist.org/packages/solis/phpbreaker]
+[![Build Status][ico-travis]][https://travis-ci.org/rafaelbeecker/phpbreaker.svg?branch=master]
+
 ## What is Breaker
 Breaker package contains the TException class which extends the default php \Exception class. It organizes the information in throwed exceptions allowing to define how the information will be displayed.
 
