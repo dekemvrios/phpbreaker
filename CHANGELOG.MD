@@ -2,11 +2,11 @@
 
 Todas as modificações relevantes para esse projeto serão documentadas seguindo as especificações descritas por [keeping changelog](http://keepachangelog.com/).
 
-## 0.0.3 - 2017-07-19
+## 0.1.0 - 2017-07-19
 
 ### Added
 - Adicionado suporte para integração com Travis CI.
-- Adicionaod diretório incluido testes com PHPUnit.
+- Adicionado diretório incluido testes com PHPUnit.
 
 ## 0.0.2 - 2017-07-09
 
