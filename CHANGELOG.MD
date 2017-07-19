@@ -1,19 +1,19 @@
 # Changelog
 
-Todas as modificaÁıes relevantes para esse projeto ser„o documentadas seguindo as especificaÁıes descritas por [keeping changelog](http://keepachangelog.com/).
+Todas as modifica√ß√µes relevantes para esse projeto ser√£o documentadas seguindo as especifica√ß√µes descritas por [keeping changelog](http://keepachangelog.com/).
 
 ## 0.1.0 - 2017-07-19
 
 ### Added
-- Adicionado suporte para integraÁ„o com Travis CI.
-- Adicionado diretÛrio incluido testes com PHPUnit.
+- Adicionado suporte para integra√ß√£o com Travis CI.
+- Adicionado diret√≥rio incluido testes com PHPUnit.
 
 ## 0.0.2 - 2017-07-09
 
 ### Fixed
-- Corrigido estrutura de diretÛrios do biblioteca de forma a permitir extens„o da biblioteca.
+- Corrigido estrutura de diret√≥rios do biblioteca de forma a permitir extens√£o da biblioteca.
 
 ## 0.0.1 - 2017-05-05
 
 ### Added
-- Implementado versionamento sem‚ntico [Semantic Versioning 2.0.0](http://semver.org/).
+- Implementado versionamento sem√¢ntico [Semantic Versioning 2.0.0](http://semver.org/).

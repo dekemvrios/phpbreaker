@@ -4,76 +4,60 @@
 [![Build Status](https://travis-ci.org/rafaelbeecker/phpbreaker.svg?branch=master)](https://travis-ci.org/rafaelbeecker/phpbreaker)
 [![License](https://poser.pugx.org/solis/phpbreaker/license)](https://packagist.org/packages/solis/phpbreaker)
 
-## What is Breaker
-Breaker package contains the TException class which extends the default php \Exception class. It organizes the information in throwed exceptions allowing to define how the information will be displayed.
+## Breaker
+
+Breaker extende o mecanismo \Exception nativo da linguagem, organizando a informação e permitindo definir como essa será retornada.  
 
 ## Requirements
 * php >=5.6
 
-## How To Install?
-This package was designed to be installed with composer dependency management tool.
+## Como instalar?
+
+Esse pacote foi estruturado para ser instalado por meio do composer
+
 ```
-composer require solis/phpbreaker "dev-master"
+composer require solis/phpbreaker
 ``` 
 
-## How To Use it?
-Require it with composer and thrown a new TException
+## Como utilizar?
+
+Instancie a classe TException no momento em que for necessário lançar um novo erro
+
 ```
 use Solis\Breaker\TException
 
 try {
 
-  throw new TException($class, $method, $reason, $code);
+  // Lots of code here
+
+  // I have a bad feeling about this
+  
+  // More code here
+  
+  // Something wrong happened! noooo!
+    
+  throw new TException(__CLASS__, __METHOD__, 'something really bad', 500);
 
 catch (TException $ex) {
-  echo $ex->toJson();
+
+  // I catch you here
+  echo $ex->getError()->toJson();        
+  
+  // get the $debug representation as json
+  // $ex->getDebug()->toJson();
+  
+  // get the full TException representation as json
+  // $ex->toJson();
 }
 ```
 
-## How This Works
-TException extends the \Exception class and separates the exception information in two objects
-
-* $error - stores the $code and $reason especified in TException constructor
-* $debug - stores the $class and $method especified in TException constructor
-
-$error and $debug objects are instances of \Solis\Breaker\TInfo class. Their structure allows to add or remove information to it as needed.
+## Testes
 
 ```
-$ex->getError()->addEntry('help', 'contact suport');
-
-$ex->getDebug()->addEntry('application', 'app test class');
-
-$ex->getError()->removeEntry('message');
-
-$ex->getDebug()->removeEntry('class');
+$ composer test
 ```
 
-Its possible to return $error or $debug information individually as array or json, or get the full Exception representation as array or json.
+## Licença
 
-```
-// get the full TException representation as json
-$ex->toJson();
-
-// get the $error representation as json
-$ex->getError()->toJson();
-
-// get the $debug representation as json
-$ex->getDebug()->toJson();
-```
-
-The TException json representation will be like the following
-
-```
-{
-  "error": {
-    "code": 500,
-    "message": "TException class test"
-  },
-  "debug": {
-    "class": "Client",
-    "method": "Client::__construct"
-  }
-}
-```
-
+The MIT License (MIT). Verifique [LICENSE](LICENSE.MD) para mais informações.
 
