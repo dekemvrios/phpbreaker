@@ -1,6 +1,6 @@
 # README
 
-[![Latest Unstable Version](https://poser.pugx.org/nfephp-org/nfephp/v/unstable.svg)](https://packagist.org/packages/solis/phpbreaker)
+[![Latest Version on Packagist](https://poser.pugx.org/nfephp-org/nfephp/v/unstable.svg)](https://packagist.org/packages/solis/phpbreaker)
 [![Build Status](https://travis-ci.org/rafaelbeecker/phpbreaker.svg?branch=master)](https://travis-ci.org/rafaelbeecker/phpbreaker)
 
 ## What is Breaker
