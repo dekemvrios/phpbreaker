@@ -1,19 +1,21 @@
 # Changelog
 
-Todas as modificações relevantes para esse projeto serão documentadas seguindo as especificações descritas por [keeping changelog](http://keepachangelog.com/).
+Todas as modificações relevantes para phpbreaker serão documentadas neste arquivo
 
-## 0.1.0 - 2017-07-19
+O formato é baseado [Keep a CHANGELOG](http://keepachangelog.com/) e esse projeto adere ao [Semantic Versioning 2.0.0](http://semver.org/).  
+
+## [0.1.0] - 2017-07-19
 
 ### Added
 - Adicionado suporte para integração com Travis CI.
-- Adicionado diretório incluido testes com PHPUnit.
+- Adicionado suporte para testes com PHPUnit.
 
-## 0.0.2 - 2017-07-09
+## [0.0.2] - 2017-07-09
 
 ### Fixed
-- Corrigido estrutura de diretórios do biblioteca de forma a permitir extensão da biblioteca.
+- Corrigido estrutura de diretórios de forma a permitir extensão da biblioteca.
 
-## 0.0.1 - 2017-05-05
+## [0.0.1] - 2017-05-05
 
 ### Added
-- Implementado versionamento semântico [Semantic Versioning 2.0.0](http://semver.org/).
+- Publicado codigo fonte no packagist.
