@@ -6,7 +6,7 @@ use Solis\Breaker\Contracts\TInfoContract;
 
 /**
  * TException
- * 
+ *
  * @package Solis\Breaker\TException
  */
 abstract class TExceptionAbstract extends \Exception
@@ -14,14 +14,14 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * Contains default information about the exception
-     * 
+     *
      * @var TInfoContract
      */
     protected $error;
 
     /**
      * Contains information about the exception displayed in debug mode
-     * 
+     *
      * @var TInfoContract
      */
     protected $debug;
@@ -36,7 +36,7 @@ abstract class TExceptionAbstract extends \Exception
     {
         parent::__construct('exception owner ' . __CLASS__);
 
-        // create new Tinfo object to store default TException information                
+        // create new Tinfo object to store default TException information
         $this->error = $error;
 
         // create new Tinfo object to store debug TException information
@@ -45,9 +45,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * getError
-     * 
+     *
      * Return the default information about the throwed TException
-     * 
+     *
      * @return TInfoContract
      */
     public function getError()
@@ -57,9 +57,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * getDebug
-     * 
+     *
      * Return the Debug information about the throwed TException
-     * 
+     *
      * @return TInfoContract
      */
     public function getDebug()
@@ -69,9 +69,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * toArray
-     * 
+     *
      * Return default and debug information about the throwed TException
-     * 
+     *
      * @return array
      */
     public function toArray()
@@ -84,9 +84,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * toJson
-     * 
+     *
      * Return a json representation of the default and debug information about the throwed TException
-     * 
+     *
      * @return string
      */
     public function toJson()
@@ -96,9 +96,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * getTTrace
-     * 
+     *
      * Return the TException stack trace as an array
-     * 
+     *
      * @param array $info keys used to filter the trace
      *
      * @return array
@@ -106,7 +106,7 @@ abstract class TExceptionAbstract extends \Exception
     protected function getTTrace($info = null)
     {
         if (!empty($info)) {
-            return array_map(function($item) use ($info) {
+            return array_map(function ($item) use ($info) {
                 return $this->filterArrayKeys($item, $info);
             }, $this->getTrace());
         }
@@ -116,9 +116,9 @@ abstract class TExceptionAbstract extends \Exception
 
     /**
      * filterArrayKeys
-     * 
+     *
      * remove array keys that are not specified in $data
-     * 
+     *
      * @param array $array
      * @param array $data
      * @return array
@@ -134,4 +134,3 @@ abstract class TExceptionAbstract extends \Exception
         return $array;
     }
 }
-

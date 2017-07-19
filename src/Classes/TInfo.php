@@ -6,7 +6,7 @@ use Solis\Breaker\Contracts\TInfoContract;
 
 /**
  * TInfo
- * 
+ *
  * @package Solis\Breaker\TInfo
  */
 final class TInfo implements TInfoContract
@@ -14,14 +14,14 @@ final class TInfo implements TInfoContract
 
     /**
      * $info
-     * 
+     *
      * @var array
      */
     private $info;
 
     /**
      * __construct
-     * 
+     *
      * @param array $info
      */
     private function __construct($info = [])
@@ -31,9 +31,9 @@ final class TInfo implements TInfoContract
 
     /**
      * build
-     * 
+     *
      * Factory method
-     * 
+     *
      * @param array $info
      * @return \static
      */
@@ -48,7 +48,7 @@ final class TInfo implements TInfoContract
 
     /**
      * setInfo
-     * 
+     *
      * @param array $value
      */
     public function setInfo($value)
@@ -58,7 +58,7 @@ final class TInfo implements TInfoContract
 
     /**
      * getInfo
-     * 
+     *
      * @return array
      */
     public function getInfo()
@@ -100,7 +100,7 @@ final class TInfo implements TInfoContract
 
     /**
      * getEntry
-     * 
+     *
      * @param string $key
      * @return mixed
      */
@@ -115,7 +115,7 @@ final class TInfo implements TInfoContract
 
     /**
      * removeEntry
-     * 
+     *
      * @param string $key
      * @return boolean
      */
@@ -132,7 +132,7 @@ final class TInfo implements TInfoContract
 
     /**
      * toJson
-     * 
+     *
      * @return string
      */
     public function toJson()
@@ -142,12 +142,11 @@ final class TInfo implements TInfoContract
 
     /**
      * toArray
-     * 
+     *
      * @return array
      */
     public function toArray()
     {
         return $this->getInfo();
     }
-
 }
