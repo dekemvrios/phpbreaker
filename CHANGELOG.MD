@@ -17,10 +17,17 @@ Considerando a implementação default da classe TException, que possui a propri
 $exception->getError()->getMessage();
 $exception->getError()->setMessage('random message');
 
+$exception->getError()->setAny('any value');
+$exception->getError()->getAny();
+
 // implemantação até versão 0.1.0
 
 $exception->getError()->getEntry('message');
 $exception->getError()->setEntry('message', 'random message');
+
+$exception->getError()->setEntry('any', 'any value');
+$exception->getError()->getEntry('any');
+
 ```
 
 ## [0.1.0] - 2017-07-19
