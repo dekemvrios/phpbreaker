@@ -61,9 +61,33 @@ class TExceptionTest extends \PHPUnit_Framework_TestCase
      *
      * @depends testCanRaiseTException
      */
+    public function testCanGetMessageEntryByMagicMethod(TException $exception)
+    {
+        $message = $exception->getError()->getMessage();
+
+        $this->assertEquals('TException class sample', $message, 'Expected message value has not been found');
+    }
+
+    /**
+     * @param TException $exception
+     *
+     * @depends testCanRaiseTException
+     */
     public function testHasCodeEntry(TException $exception)
     {
         $code = $exception->getError()->getEntry('code');
+
+        $this->assertEquals(500, $code, 'Expected code value has not been found');
+    }
+
+    /**
+     * @param TException $exception
+     *
+     * @depends testCanRaiseTException
+     */
+    public function testCanGetCodeEntryByMagicMethod(TException $exception)
+    {
+        $code = $exception->getError()->getCode();
 
         $this->assertEquals(500, $code, 'Expected code value has not been found');
     }
@@ -85,9 +109,33 @@ class TExceptionTest extends \PHPUnit_Framework_TestCase
      *
      * @depends testCanRaiseTException
      */
+    public function testCanGetClassEntryByMagicMethod(TException $exception)
+    {
+        $class = $exception->getDebug()->getClass();
+
+        $this->assertEquals('TExceptionMock', $class, 'Expected class value has not been found');
+    }
+
+    /**
+     * @param TException $exception
+     *
+     * @depends testCanRaiseTException
+     */
     public function testHasMethodEntry(TException $exception)
     {
         $method = $exception->getDebug()->getEntry('method');
+
+        $this->assertEquals('TExceptionMock::__construct', $method, 'Expected method value has not been found');
+    }
+
+    /**
+     * @param TException $exception
+     *
+     * @depends testCanRaiseTException
+     */
+    public function testCanGetMethodEntryByMagicMethod(TException $exception)
+    {
+        $method = $exception->getDebug()->getMethod();
 
         $this->assertEquals('TExceptionMock::__construct', $method, 'Expected method value has not been found');
     }
