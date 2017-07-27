@@ -35,6 +35,7 @@ final class TInfo implements TInfoContract
      * Factory method
      *
      * @param array $info
+     *
      * @return \static
      */
     public static function build($info = [])
@@ -69,8 +70,8 @@ final class TInfo implements TInfoContract
     /**
      * addEntry
      *
-     * @param string  $key
-     * @param mixed   $value
+     * @param string $key
+     * @param mixed  $value
      *
      * @return boolean
      */
@@ -102,6 +103,7 @@ final class TInfo implements TInfoContract
      * getEntry
      *
      * @param string $key
+     *
      * @return mixed
      */
     public function getEntry($key)
@@ -117,6 +119,7 @@ final class TInfo implements TInfoContract
      * removeEntry
      *
      * @param string $key
+     *
      * @return boolean
      */
     public function removeEntry($key)
@@ -148,5 +151,27 @@ final class TInfo implements TInfoContract
     public function toArray()
     {
         return $this->getInfo();
+    }
+
+    /**
+     * @param string $name
+     * @param mixed  $arguments
+     *
+     * @return mixed
+     */
+    public function __call($name, $arguments)
+    {
+        if (preg_match('/^get/', $name)) {
+            return $this->getEntry(strtolower(str_replace('get', '', $name)));
+        }
+
+        if (preg_match('/^set/', $name)) {
+            return $this->setEntry(
+                strtolower(str_replace('set', '', $name)),
+                count($arguments) == 1 ? $arguments[0] : $arguments
+            );
+        }
+
+        return false;
     }
 }
