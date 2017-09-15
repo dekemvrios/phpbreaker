@@ -9,7 +9,7 @@ use Solis\Breaker\Helpful\AbstractDataContainer;
  *
  * @package Solis\Breaker\Exceptions
  */
-interface FriendlyExceptionInterface
+interface FriendlyExceptionInterface extends \Throwable
 {
 
     /**

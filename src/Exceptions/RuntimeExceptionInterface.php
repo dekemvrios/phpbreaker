@@ -2,9 +2,7 @@
 
 namespace Solis\Breaker\Exceptions;
 
-use Throwable;
-
-interface RuntimeExceptionInterface extends Throwable, FriendlyExceptionInterface
+interface RuntimeExceptionInterface extends FriendlyExceptionInterface
 {
 
 }
