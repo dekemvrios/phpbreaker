@@ -2,6 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/solis/phpbreaker/v/stable)](https://packagist.org/packages/solis/phpbreaker)
 [![License](https://poser.pugx.org/solis/phpbreaker/license)](https://packagist.org/packages/solis/phpbreaker)
+[![Build Status](https://travis-ci.org/rafaelbeecker/phpbreaker.svg?branch=master)](https://travis-ci.org/rafaelbeecker/phpbreaker)
 
 ## Breaker
 
