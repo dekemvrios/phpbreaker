@@ -8,19 +8,19 @@ class RuntimeExceptionTest extends TestCase
 
     public function testCanIdentityExceptionAsThrowableInstance()
     {
-        $this->setExpectedException('Throwable');
+        $this->expectException('Throwable');
         throw new RuntimeException('RuntimeException sample message');
     }
 
     public function testCanIdentityExceptionAsRuntimeException()
     {
-        $this->setExpectedException('RuntimeException');
+        $this->expectException('RuntimeException');
         throw new RuntimeException('RuntimeException sample message');
     }
 
     public function testCanIdentifyExceptionAsBreakerRuntimeException()
     {
-        $this->setExpectedException('Solis\\Breaker\\Exceptions\\RuntimeException');
+        $this->expectException('Solis\\Breaker\\Exceptions\\RuntimeException');
         throw new RuntimeException('RuntimeException sample message');
     }
 
