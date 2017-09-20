@@ -1,6 +1,7 @@
 <?php
 
 use Solis\Breaker\Exceptions\RuntimeException;
+use Solis\Breaker\Exceptions\RuntimeExceptionInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -9,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class RuntimeExceptionMock
 {
 
-    public function getRuntimeExceptionForTest()
+    public function getRuntimeExceptionForTest() : RuntimeExceptionInterface
     {
         return new RuntimeException('RuntimeException sample message');
     }
