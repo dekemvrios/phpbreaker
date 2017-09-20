@@ -18,27 +18,35 @@ class StackInfo
 
     public function getClassNameFromLastStack(): string
     {
-        $trace = $this->getLastStackTrace() ?? [];
+        $trace = $this->getLastStackTrace();
 
-        return $trace['class'] ?? '';
+        return $this->getIndexOf($trace, 'class');
     }
 
     public function getMethodNameFromLastStack(): string
     {
-        $trace = $this->getLastStackTrace() ?? [];
+        $trace = $this->getLastStackTrace();
 
-        return $trace['function'] ?? '';
+        return $this->getIndexOf($trace, 'function');
     }
 
     public function getArgsFromLastStack(): array
     {
-        $trace = $this->getLastStackTrace() ?? [];
+        $trace = $this->getLastStackTrace();
 
-        return $trace['args'] ?? [];
+        return $this->getIndexOf($trace, 'args');
     }
 
-    protected function getLastStackTrace()
+    protected function getLastStackTrace(): array
     {
-        return $this->trace[0];
+        return $this->getIndexOf($this->trace, 0);
+    }
+
+    /**
+     * @return array|mixed
+     */
+    protected function getIndexOf($array, $index)
+    {
+        return $array[$index] ?? [];
     }
 }
