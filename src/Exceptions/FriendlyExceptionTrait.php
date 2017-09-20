@@ -73,6 +73,16 @@ trait FriendlyExceptionTrait
         return $this;
     }
 
+    public function getErrorAsJson() : string
+    {
+        return $this->getError()->toJson();
+    }
+
+    public function getDebugAsJson() : string
+    {
+        return $this->getDebug()->toJson();
+    }
+
     public function toArray(): array
     {
         return [

@@ -21,7 +21,7 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit --testsuite=RuntimeExceptionTest",
+    "test": "vendor/bin/phpunit --testsuite=TestInstantiateRuntimeException",
     "sniff": "vendor/bin/phpcs --standard=psr2 src/",
     "sniff-fix": "vendor/bin/phpcbf --standard=psr2 src/"
   }

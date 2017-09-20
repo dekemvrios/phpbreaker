@@ -1,7 +1,7 @@
 <phpunit bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="RuntimeExceptionTest">
-            <file>tests/RuntimeExceptionTest.php</file>
+        <testsuite name="TestInstantiateRuntimeException">
+            <file>tests/TestInstantiateRuntimeException.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

@@ -4,7 +4,7 @@ Todas as modificações relevantes para phpbreaker serão documentadas neste arq
 
 O formato é baseado [Keep a CHANGELOG](http://keepachangelog.com/) e esse projeto adere ao [Semantic Versioning 2.0.0](http://semver.org/).  
 
-## 2.0.0 - 2017-09-15
+## 2.0.0 - YYYY-MM-DD
 
 ## Added
 - Incluído classe RuntimeException como derivada de PHP SPL RuntimeException.

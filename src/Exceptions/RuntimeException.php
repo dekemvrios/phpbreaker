@@ -20,6 +20,6 @@ final class RuntimeException extends StandardRuntimeException implements Runtime
     ) {
         $this->setErrorDebugInformation($reason, $code, $this->getTrace());
 
-        parent::__construct($this->getError()->toJson(), $this->getErrorCode());
+        parent::__construct($this->getErrorMessage(), $this->getErrorCode());
     }
 }

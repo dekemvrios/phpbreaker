@@ -3,13 +3,9 @@
 namespace Solis\Breaker\Exceptions;
 
 use Solis\Breaker\Helpful\AbstractDataContainer;
+use Throwable as StandardThrowable;
 
-/**
- * Interface FriendlyExceptionInterface
- *
- * @package Solis\Breaker\Exceptions
- */
-interface FriendlyExceptionInterface extends \Throwable
+interface FriendlyExceptionInterface extends StandardThrowable
 {
 
     /**
@@ -88,4 +84,18 @@ interface FriendlyExceptionInterface extends \Throwable
      * @return string
      */
     public function toJson(): string;
+
+    /**
+     * Retorna os dados compilados em error da exception como string json
+     *
+     * @return string
+     */
+    public function getErrorAsJson() : string;
+
+    /**
+     * Retorna os dados compilados de depuração da exception como string json
+     *
+     * @return string
+     */
+    public function getDebugAsJson() : string;
 }
