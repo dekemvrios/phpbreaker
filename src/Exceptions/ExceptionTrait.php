@@ -1,4 +1,15 @@
 <?php
+/**
+ * Breaker Exception Trait.
+ *
+ * This trait adds specific information to the exceptions if available.
+ *
+ * @package   Solis\Breaker\Exceptions
+ * @author    Rafael Becker <rafael@beecker.com.br>
+ * @license   MIT
+ * @link      https://github.com/rafaelbeecker/phpbreaker
+ * @copyright 2017 Rafael Becker
+ */
 
 namespace Solis\Breaker\Exceptions;
 
@@ -6,12 +17,7 @@ use Solis\Breaker\Helpful\AbstractDataContainer;
 use Solis\Breaker\Helpful\ExceptionDataContainer;
 use Solis\Breaker\Helpful\StackInfo;
 
-/**
- * Trait FriendlyExceptionTrait
- *
- * @package Solis\Breaker\Exceptions
- */
-trait FriendlyExceptionTrait
+trait ExceptionTrait
 {
 
     /**

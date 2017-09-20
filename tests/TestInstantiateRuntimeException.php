@@ -1,100 +1,80 @@
 <?php
 
 use Solis\Breaker\Exceptions\RuntimeException;
-use Solis\Breaker\Exceptions\RuntimeExceptionInterface;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class SolisExceptionMock
- */
-class RuntimeExceptionMock
-{
-
-    public function getRuntimeExceptionForTest() : RuntimeExceptionInterface
-    {
-        return new RuntimeException('RuntimeException sample message');
-    }
-}
-
-/**
- * Class TExceptionTest
- */
 class TestInstantiateRuntimeException extends TestCase
 {
 
-    public function testInstanceOfBreakerRuntimeExceptionInterface()
+    public function testCanIdentityExceptionAsThrowableInstance()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
-        $this->assertInstanceOf('Solis\\Breaker\\Exceptions\\RuntimeExceptionInterface', $exception,
-                                'Expected exception is not instance of Breaker RuntimeExceptionInterface');
+        $this->setExpectedException('Throwable');
+        throw new RuntimeException('RuntimeException sample message');
     }
 
-    public function testInstanceOfBreakerFriendlyExceptionInterface()
+    public function testCanIdentityExceptionAsRuntimeException()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
-        $this->assertInstanceOf('Solis\\Breaker\\Exceptions\\FriendlyExceptionInterface', $exception,
-                                'Expected exception is not instance of Breaker FriendlyExceptionInterface');
+        $this->setExpectedException('RuntimeException');
+        throw new RuntimeException('RuntimeException sample message');
     }
 
-    public function testInstanceOfSplRuntimeException()
+    public function testCanIdentifyExceptionAsBreakerRuntimeException()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
-        $this->assertInstanceOf('RuntimeException', $exception,
-                                'Expected exception is not instance of StandardRuntimeException');
+        $this->setExpectedException('Solis\\Breaker\\Exceptions\\RuntimeException');
+        throw new RuntimeException('RuntimeException sample message');
     }
 
-    public function testInstanceOfThrowable()
+    public function testHasExpectedErrorMessage()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
-        $this->assertInstanceOf('Throwable', $exception, 'Expected exception is not instance of Throwable');
-    }
-
-    public function testHasErrorMessage()
-    {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $message   = $exception->getErrorMessage();
         $this->assertEquals('RuntimeException sample message', $message, 'Expected message value has not been found');
     }
 
-    public function testHasErrorCode()
+    public function testHasExpectedErrorCode()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $code      = $exception->getErrorCode();
         $this->assertEquals(500, $code, 'Expected code value has not been found');
     }
 
-    public function testHasClassName()
+    public function testHasExpectedClassName()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $class     = $exception->getClassName();
-        $this->assertEquals('RuntimeExceptionMock', $class, 'Expected class value has not been found');
+        $this->assertEquals('TestInstantiateRuntimeException', $class, 'Expected class value has not been found');
     }
 
-    public function testHasMethodName()
+    public function testHasExpectedMethodName()
     {
-        $exception = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $method    = $exception->getMethodName();
-        $this->assertEquals('getRuntimeExceptionForTest', $method, 'Expected method value has not been found');
+        $this->assertEquals('getInstanceOfRuntimeExceptionForTest', $method, 'Expected method name has not been found');
     }
 
-    public function testExceptionHasValidJson()
+    public function testRuntimeExceptionHasValidJsonRepresentation()
     {
-        $exception   = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception   = $this->getInstanceOfRuntimeExceptionForTest();
         $isValidJson = boolval(json_encode(json_decode($exception->toJson())));
         $this->assertEquals(true, $isValidJson, 'RuntimeException has not a valid json representation');
     }
 
-    public function testErrorHasValidJson()
+    public function testErrorEntryHasValidJsonRepresentation()
     {
-        $exception   = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception   = $this->getInstanceOfRuntimeExceptionForTest();
         $isValidJson = boolval(json_encode(json_decode($exception->getErrorAsJson())));
         $this->assertEquals(true, $isValidJson, 'RuntimeException error entry has not a valid json representation');
     }
 
-    public function testDebugHasValidJson()
+    public function testDebugEntryHasValidJsonRepresentation()
     {
-        $exception   = (new RuntimeExceptionMock())->getRuntimeExceptionForTest();
+        $exception   = $this->getInstanceOfRuntimeExceptionForTest();
         $isValidJson = boolval(json_encode(json_decode($exception->getDebugAsJson())));
         $this->assertEquals(true, $isValidJson, 'RuntimeException debug entry has not a valid json representation');
+    }
+
+    private function getInstanceOfRuntimeExceptionForTest()
+    {
+        return new RuntimeException('RuntimeException sample message');
     }
 }

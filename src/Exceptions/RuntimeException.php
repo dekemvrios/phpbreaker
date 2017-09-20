@@ -1,18 +1,33 @@
 <?php
+/**
+ * Breaker Runtime Exception.
+ *
+ * This exception is thrown if an error which can only be found on runtime
+ * occurs.
+ *
+ * @package   Solis\Breaker\Exceptions
+ * @author    Rafael Becker <rafael@beecker.com.br>
+ * @license   MIT
+ * @link      https://github.com/rafaelbeecker/phpbreaker
+ * @copyright 2017 Rafael Becker
+ */
 
 namespace Solis\Breaker\Exceptions;
 
 use RuntimeException as StandardRuntimeException;
 
 /**
- * Class RuntimeException
+ * Class RuntimeException.
+ *
+ * @since   2.0.0
  *
  * @package Solis\Breaker\Exceptions
+ * @author  Rafael Becker <rafael@beecker.com.br>
  */
-final class RuntimeException extends StandardRuntimeException implements RuntimeExceptionInterface
+final class RuntimeException extends StandardRuntimeException implements ExceptionInterface
 {
 
-    use FriendlyExceptionTrait;
+    use ExceptionTrait;
 
     public function __construct(
         $reason,

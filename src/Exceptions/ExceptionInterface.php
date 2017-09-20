@@ -1,11 +1,29 @@
 <?php
 
+/**
+ * Breaker Exception Interface.
+ *
+ * All exceptions of this package implement this base interface, and extend one of the SPL extensions.
+ *
+ * @package   Solis\Breaker\Exceptions
+ * @author    Rafael Becker <rafael@beecker.com.br>
+ * @license   MIT
+ * @link      https://github.com/rafaelbeecker/phpbreaker
+ * @copyright 2017 Rafael Becker
+ */
 namespace Solis\Breaker\Exceptions;
 
 use Solis\Breaker\Helpful\AbstractDataContainer;
-use Throwable as StandardThrowable;
 
-interface FriendlyExceptionInterface extends StandardThrowable
+/**
+ * Interface ExceptionInterface.
+ *
+ * @since   2.0.0
+ *
+ * @package Solis\Breaker\Exceptions
+ * @author  Rafael Becker <rafael@beecker.com.br>
+ */
+interface ExceptionInterface extends \Throwable
 {
 
     /**
