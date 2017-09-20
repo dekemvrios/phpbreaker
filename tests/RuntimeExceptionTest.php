@@ -3,7 +3,7 @@
 use Solis\Breaker\Exceptions\RuntimeException;
 use PHPUnit\Framework\TestCase;
 
-class TestInstantiateRuntimeException extends TestCase
+class RuntimeExceptionTest extends TestCase
 {
 
     public function testCanIdentityExceptionAsThrowableInstance()
@@ -42,7 +42,7 @@ class TestInstantiateRuntimeException extends TestCase
     {
         $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $class     = $exception->getClassName();
-        $this->assertEquals('TestInstantiateRuntimeException', $class, 'Expected class value has not been found');
+        $this->assertEquals('RuntimeExceptionTest', $class, 'Expected class value has not been found');
     }
 
     public function testHasExpectedMethodName()
