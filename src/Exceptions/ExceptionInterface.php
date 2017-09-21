@@ -112,12 +112,12 @@ interface ExceptionInterface extends \Throwable
      *
      * @return string
      */
-    public function getErrorAsJson() : string;
+    public function getErrorAsJson(): string;
 
     /**
      * Get the Debug entry serialized in json format.
      *
      * @return string
      */
-    public function getDebugAsJson() : string;
+    public function getDebugAsJson(): string;
 }

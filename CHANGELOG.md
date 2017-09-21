@@ -4,6 +4,11 @@ All Notable changes to phpbreaker will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.  
 
+## 2.0.2 - 2017-09-21
+
+## Changed
+- Translated library documentation from portuguese to english.
+
 ## 2.0.1 - 2017-09-21
 
 ## Added

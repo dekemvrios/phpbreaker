@@ -15,6 +15,8 @@ use Solis\Foundation\Arrays\ArrayCollection;
 /**
  * Class StackInfo
  *
+ * 'StackInfo' serves as a container for the 'Exception' stack, using it as a collection of data.
+ *
  * @package Solis\Breaker\Helpful
  */
 class StackInfo

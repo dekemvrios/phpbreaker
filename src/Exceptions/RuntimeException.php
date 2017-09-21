@@ -13,7 +13,9 @@ namespace Solis\Breaker\Exceptions;
 use RuntimeException as StandardRuntimeException;
 
 /**
- * Class RuntimeException.
+ * RuntimeException.
+ *
+ * This exception should be thrown if an error occurs on runtime.
  *
  * @since   2.0.0
  *
