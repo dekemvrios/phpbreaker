@@ -1,30 +1,35 @@
 # Changelog
 
-Todas as modificações relevantes para phpbreaker serão documentadas neste arquivo
+All Notable changes to phpbreaker will be documented in this file.
 
-O formato é baseado [Keep a CHANGELOG](http://keepachangelog.com/) e esse projeto adere ao [Semantic Versioning 2.0.0](http://semver.org/).  
+Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.  
+
+## 2.0.2 - 2017-09-21
+
+## Changed
+- Translated library documentation from portuguese to english.
 
 ## 2.0.1 - 2017-09-21
 
 ## Added
-- Incluido caso de tese para validação de StackInfo.
+- Added unit test to validate StackInfo class.
+- Added 'solis-foundation' as package dependency to create error and debug entries in ExceptionTrait.
 
 ## Removed
-- Removido classes implementadas em Helpers e atribuições substituido comportamento por solis-foundation equivalente.
-
+- Removed unused classes contained in 'Helpful' namespace.
 
 ## 2.0.0 - 2017-09-20
 
 ## Added
-- Incluído classe RuntimeException como derivada de \RuntimeException.
-- Incluída AbstractDataContainer contendo os métodos de detalhamento migradas de Tinfo.
-- Incluída ExceptionTrait contendo métodos de atribuição e acesso ao detalhamento da exception.
-- Incluído caso de teste para validação funcionamento de RuntimeException.
+- Moved TInfo's methods to a new class AbstractDataContainer.
+- Added ExceptionTrait to easily shared methods between exception derived classes.
+- Added unit test to validate RuntimeException class.
+- Added RuntimeException derived from \RuntimeException.
 
 ## Removed
-- Removido classes de domínio TException e TInfo por intuido de refatoração do projeto.
+- Refactored 'exceptions component' removing TException and TInfo classes.
 
 ## 1.0.0 - 2017-08-05
 
 ### Added
-- Publicado package considerando versão estável.
+- Package initial stable release.

@@ -1,15 +1,11 @@
 <?php
 /**
- * Breaker Runtime Exception.
+ * This file is part of the Breaker package.
  *
- * This exception is thrown if an error which can only be found on runtime
- * occurs.
+ * (c) Rafael Becker <rafael@beecker.com.br>
  *
- * @package   Solis\Breaker\Exceptions
- * @author    Rafael Becker <rafael@beecker.com.br>
- * @license   MIT
- * @link      https://github.com/rafaelbeecker/phpbreaker
- * @copyright 2017 Rafael Becker
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Solis\Breaker\Exceptions;
@@ -17,7 +13,9 @@ namespace Solis\Breaker\Exceptions;
 use RuntimeException as StandardRuntimeException;
 
 /**
- * Class RuntimeException.
+ * RuntimeException.
+ *
+ * This exception should be thrown if an error occurs on runtime.
  *
  * @since   2.0.0
  *
@@ -29,11 +27,17 @@ final class RuntimeException extends StandardRuntimeException implements Excepti
 
     use ExceptionTrait;
 
+    /**
+     * Create a new RuntimeException instance.
+     *
+     * @param string $reason
+     * @param int    $code
+     */
     public function __construct(
         $reason,
         $code = 500
     ) {
-        $this->setErrorDebugInformation($reason, $code, $this->getTrace());
+        $this->setExceptionDetails($reason, $code, $this->getTrace());
 
         parent::__construct($this->getErrorMessage(), $this->getErrorCode());
     }
