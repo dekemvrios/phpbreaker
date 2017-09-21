@@ -1,29 +1,41 @@
-# README
+# Solis Exceptions Component
 
 [![Latest Stable Version](https://poser.pugx.org/solis/phpbreaker/v/stable)](https://packagist.org/packages/solis/phpbreaker)
 [![License](https://poser.pugx.org/solis/phpbreaker/license)](https://packagist.org/packages/solis/phpbreaker)
 [![Build Status](https://travis-ci.org/rafaelbeecker/phpbreaker.svg?branch=master)](https://travis-ci.org/rafaelbeecker/phpbreaker)
 
-## Breaker
+This package contains a set of exceptions shared across Solis components.
 
-Breaker contem um conjunto de classes derivadas das Exceptions nativas do PHP, organizando a informação e permitindo definir como essa será retornada.  
+## Install
 
-
-## Como instalar?
-
-Esse pacote foi estruturado para ser instalado por meio do composer.
+The best way to use this component is through Composer
 
 ```
 composer require solis/phpbreaker
 ```
+
+## Usage
+
+``` php
+
+    // in development
+    
+```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
  
-## Testes
+## Testing
 
+```bash
+$ composer test
 ```
-composer test
-```
 
-## Licença
+## Contributing
 
-The MIT License (MIT). Verifique [LICENSE](LICENSE.MD) para mais informações.
+All feedback / bug reports / pull requests are welcome.
 
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
