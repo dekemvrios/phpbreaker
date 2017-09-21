@@ -29,11 +29,17 @@ final class RuntimeException extends StandardRuntimeException implements Excepti
 
     use ExceptionTrait;
 
+    /**
+     * Create a new RuntimeException instance.
+     *
+     * @param string $reason
+     * @param int    $code
+     */
     public function __construct(
         $reason,
         $code = 500
     ) {
-        $this->setErrorDebugInformation($reason, $code, $this->getTrace());
+        $this->setExceptionDetails($reason, $code, $this->getTrace());
 
         parent::__construct($this->getErrorMessage(), $this->getErrorCode());
     }
