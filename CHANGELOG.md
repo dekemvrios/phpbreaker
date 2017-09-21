@@ -4,6 +4,15 @@ Todas as modificações relevantes para phpbreaker serão documentadas neste arq
 
 O formato é baseado [Keep a CHANGELOG](http://keepachangelog.com/) e esse projeto adere ao [Semantic Versioning 2.0.0](http://semver.org/).  
 
+## 2.0.1 - 2017-09-21
+
+## Added
+- Incluido caso de tese para validação de StackInfo.
+
+## Removed
+- Removido classes implementadas em Helpers e atribuições substituido comportamento por solis-foundation equivalente.
+
+
 ## 2.0.0 - 2017-09-20
 
 ## Added
