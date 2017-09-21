@@ -1,14 +1,11 @@
 <?php
 /**
- * Breaker Exception Trait.
+ * This file is part of the Breaker package.
  *
- * This trait adds specific information to the exceptions if available.
+ * (c) Rafael Becker <rafael@beecker.com.br>
  *
- * @package   Solis\Breaker\Exceptions
- * @author    Rafael Becker <rafael@beecker.com.br>
- * @license   MIT
- * @link      https://github.com/rafaelbeecker/phpbreaker
- * @copyright 2017 Rafael Becker
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Solis\Breaker\Exceptions;
@@ -18,6 +15,16 @@ use Solis\Foundation\Arrays\ArrayContainer;
 use Solis\Breaker\StackInfo;
 use Solis\Foundation\Serializer\JsonSerializer;
 
+/**
+ * Breaker Exception Trait.
+ *
+ * This trait adds specific information to the exceptions if available.
+ *
+ * @since   2.0.0
+ *
+ * @package   Solis\Breaker\Exceptions
+ * @author    Rafael Becker <rafael@beecker.com.br>
+ */
 trait ExceptionTrait
 {
 

@@ -1,16 +1,14 @@
 <?php
 
 /**
- * Breaker Exception Interface.
+ * This file is part of the Breaker package.
  *
- * All exceptions of this package implement this base interface, and extend one of the SPL extensions.
+ * (c) Rafael Becker <rafael@beecker.com.br>
  *
- * @package   Solis\Breaker\Exceptions
- * @author    Rafael Becker <rafael@beecker.com.br>
- * @license   MIT
- * @link      https://github.com/rafaelbeecker/phpbreaker
- * @copyright 2017 Rafael Becker
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
 namespace Solis\Breaker\Exceptions;
 
 use Solis\Foundation\Arrays\ArrayContainer;
