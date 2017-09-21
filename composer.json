@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "solis/foundation": "~v0.1"
+    "solis/foundation": "v0.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~v6.0",
