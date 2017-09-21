@@ -1,6 +1,6 @@
 {
   "name": "solis/phpbreaker",
-  "description": "PhpBreaker deriva das SPls Exceptions de modo a permitir maior detalhamento de erros lançados.",
+  "description": "This package contains a set of exceptions shared across Solis components",
   "license": "MIT",
   "authors": [
     {
