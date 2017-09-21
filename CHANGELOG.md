@@ -17,7 +17,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## Added
 - Moved TInfo's methods to a new class AbstractDataContainer.
-- Added ExceptionTrait to easily shared methods between exception.
+- Added ExceptionTrait to easily shared methods between exception derived classes.
 - Added unit test to validate RuntimeException class.
 - Added RuntimeException derived from \RuntimeException.
 
