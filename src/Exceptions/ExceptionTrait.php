@@ -22,21 +22,21 @@ trait ExceptionTrait
 {
 
     /**
-     * Soft information about the exception
+     * Soft information about the exception.
      *
      * @var ArrayContainer
      */
     protected $error;
 
     /**
-     * Debug information about the exception
+     * Debug information about the exception.
      *
      * @var ArrayContainer
      */
     protected $debug;
 
     /**
-     * Get the 'message' specified in the error entry of the component exception
+     * Get the 'message' specified in the error entry of the component exception.
      *
      * @return string
      */
@@ -46,7 +46,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the 'code' specified in the error entry of the component exception
+     * Get the 'code' specified in the error entry of the component exception.
      *
      * @return int
      */
@@ -56,7 +56,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the 'class' specified in the debug entry of the component exception
+     * Get the 'class' specified in the debug entry of the component exception.
      *
      * @return string
      */
@@ -66,7 +66,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the 'method' specified in the debug entry of the component exception
+     * Get the 'method' specified in the debug entry of the component exception.
      *
      * @return string
      */
@@ -76,7 +76,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the 'args' specified in the debug entry of the component exception
+     * Get the 'args' specified in the debug entry of the component exception.
      *
      * @return array
      */
@@ -86,7 +86,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the Error entry of the component exception
+     * Get the Error entry of the component exception.
      *
      * @return ArrayContainer
      */
@@ -96,7 +96,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Set the Error entry of the component exception
+     * Set the Error entry of the component exception.
      *
      * @param ArrayContainer $error
      *
@@ -110,7 +110,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the Debug entry of the component exception
+     * Get the Debug entry of the component exception.
      *
      * @return ArrayContainer
      */
@@ -120,7 +120,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Set the Debug entry of the component exception
+     * Set the Debug entry of the component exception.
      *
      * @param ArrayContainer $debug
      *
@@ -134,7 +134,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the Error entry serialized in json format
+     * Get the Error entry serialized in json format.
      *
      * @return string
      */
@@ -144,7 +144,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Get the Debug entry serialized in json format
+     * Get the Debug entry serialized in json format.
      *
      * @return string
      */
@@ -169,7 +169,7 @@ trait ExceptionTrait
 
     /**
      * Get the array representation of the component exception serialized
-     * in json format
+     * in json format.
      *
      * @return string
      */
@@ -179,7 +179,7 @@ trait ExceptionTrait
     }
 
     /**
-     * Set the exception details, building its error and debug entry
+     * Set the exception details, building its error and debug entry.
      *
      * @param string $reason
      * @param int    $code
