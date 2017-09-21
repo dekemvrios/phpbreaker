@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "solis/foundation": "~v0.1"
+    "solis/foundation": "v0.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~v6.0",
@@ -21,9 +21,14 @@
       "Solis\\Breaker\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Solis\\Breaker\\Tests\\": "tests"
+    }
+  },
   "scripts": {
     "test": "vendor/bin/phpunit --testdox",
-    "sniff": "vendor/bin/phpcs --standard=psr2 src/",
-    "sniff-fix": "vendor/bin/phpcbf --standard=psr2 src/"
+    "check-style": "vendor/bin/phpcs --standard=psr2 src tests",
+    "fix-style": "vendor/bin/phpcbf --standard=psr2 src tests"
   }
 }

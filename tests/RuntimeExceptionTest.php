@@ -1,5 +1,7 @@
 <?php
 
+namespace Solis\Breaker\Tests;
+
 use Solis\Breaker\Exceptions\RuntimeException;
 use PHPUnit\Framework\TestCase;
 
@@ -42,7 +44,11 @@ class RuntimeExceptionTest extends TestCase
     {
         $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $class     = $exception->getClassName();
-        $this->assertEquals('RuntimeExceptionTest', $class, 'Expected class value has not been found');
+        $this->assertEquals(
+            'Solis\\Breaker\\Tests\\RuntimeExceptionTest',
+            $class,
+            'Expected class value has not been found'
+        );
     }
 
     public function testHasExpectedMethodName()
@@ -50,6 +56,14 @@ class RuntimeExceptionTest extends TestCase
         $exception = $this->getInstanceOfRuntimeExceptionForTest();
         $method    = $exception->getMethodName();
         $this->assertEquals('getInstanceOfRuntimeExceptionForTest', $method, 'Expected method name has not been found');
+    }
+
+    public function testHasExpectedArgs()
+    {
+        $expectedArgs = [1, 2, 3];
+        $exception    = $this->getInstanceOfRuntimeExceptionForTest($expectedArgs);
+        $args         = $exception->getMethodArgs();
+        $this->assertEquals([$expectedArgs], $args);
     }
 
     public function testRuntimeExceptionHasValidJsonRepresentation()
@@ -73,7 +87,7 @@ class RuntimeExceptionTest extends TestCase
         $this->assertEquals(true, $isValidJson, 'RuntimeException debug entry has not a valid json representation');
     }
 
-    private function getInstanceOfRuntimeExceptionForTest()
+    private function getInstanceOfRuntimeExceptionForTest(...$args)
     {
         return new RuntimeException('RuntimeException sample message');
     }

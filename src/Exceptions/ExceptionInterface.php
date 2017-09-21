@@ -13,7 +13,7 @@
  */
 namespace Solis\Breaker\Exceptions;
 
-use Solis\Breaker\Helpful\AbstractDataContainer;
+use Solis\Foundation\Arrays\ArrayContainer;
 
 /**
  * Interface ExceptionInterface.
@@ -64,30 +64,30 @@ interface ExceptionInterface extends \Throwable
     /**
      * Retorna o AbstractDataContainer qual representa as informações de erro da exception
      *
-     * @return AbstractDataContainer
+     * @return ArrayContainer
      */
-    public function getError(): AbstractDataContainer;
+    public function getError(): ArrayContainer;
 
     /**
-     * Atribui o AbstractDataContainer qual representa as informações de erro da exception
+     * Atribui o ArrayContainer qual representa as informações de erro da exception
      *
-     * @param AbstractDataContainer $error
+     * @param ArrayContainer $error
      */
-    public function setError(AbstractDataContainer $error);
+    public function setError(ArrayContainer $error);
 
     /**
-     * Retorna o AbstractDataContainer qual representa as informações de debug da exception
+     * Retorna o ArrayContainer qual representa as informações de debug da exception
      *
-     * @return AbstractDataContainer
+     * @return ArrayContainer
      */
-    public function getDebug(): AbstractDataContainer;
+    public function getDebug(): ArrayContainer;
 
     /**
-     * Atribui o AbstractDataContainer qual representa as informações de debug da exception
+     * Atribui o ArrayContainer qual representa as informações de debug da exception
      *
-     * @param AbstractDataContainer $debug
+     * @param ArrayContainer $debug
      */
-    public function setDebug(AbstractDataContainer $debug);
+    public function setDebug(ArrayContainer $debug);
 
     /**
      * Retorna os dados compilados em error e debug da exception como array associativo
