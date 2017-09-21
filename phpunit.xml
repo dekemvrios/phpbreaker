@@ -10,8 +10,8 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="RuntimeExceptionTest">
-            <file>tests/RuntimeExceptionTest.php</file>
+        <testsuite name="Exceptions">
+            <directory>tests/</directory>
         </testsuite>
     </testsuites>
     <filter>

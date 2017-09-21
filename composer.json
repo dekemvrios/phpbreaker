@@ -21,6 +21,11 @@
       "Solis\\Breaker\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Solis\\Breaker\\Tests\\": "tests"
+    }
+  },
   "scripts": {
     "test": "vendor/bin/phpunit --testdox",
     "check-style": "vendor/bin/phpcs --standard=psr2 src tests",

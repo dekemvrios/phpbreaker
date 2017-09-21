@@ -15,7 +15,7 @@ namespace Solis\Breaker\Exceptions;
 
 use Solis\Foundation\Arrays\ArrayContainer;
 
-use Solis\Breaker\Helpful\StackInfo;
+use Solis\Breaker\StackInfo;
 use Solis\Foundation\Serializer\JsonSerializer;
 
 trait ExceptionTrait
