@@ -13,66 +13,67 @@
 
 namespace Solis\Breaker\Exceptions;
 
-use Solis\Breaker\Helpful\AbstractDataContainer;
-use Solis\Breaker\Helpful\ExceptionDataContainer;
+use Solis\Foundation\Arrays\ArrayContainer;
+
 use Solis\Breaker\Helpful\StackInfo;
+use Solis\Foundation\Serializer\JsonSerializer;
 
 trait ExceptionTrait
 {
 
     /**
-     * @var AbstractDataContainer
+     * @var ArrayContainer
      */
     protected $error;
 
     /**
-     * @var AbstractDataContainer
+     * @var ArrayContainer
      */
     protected $debug;
 
     public function getErrorMessage(): string
     {
-        return $this->getError()->getEntry('message');
+        return $this->getError()->get('message');
     }
 
     public function getErrorCode(): int
     {
-        return $this->getError()->getEntry('code');
+        return $this->getError()->get('code');
     }
 
     public function getClassName(): string
     {
-        return $this->getDebug()->getEntry('class');
+        return $this->getDebug()->get('class');
     }
 
     public function getMethodName(): string
     {
-        return $this->getDebug()->getEntry('method');
+        return $this->getDebug()->get('method');
     }
 
     public function getMethodArgs(): array
     {
-        return $this->getDebug()->getEntry('args');
+        return $this->getDebug()->get('args');
     }
 
-    public function getError(): AbstractDataContainer
+    public function getError(): ArrayContainer
     {
         return $this->error;
     }
 
-    public function setError(AbstractDataContainer $error)
+    public function setError(ArrayContainer $error)
     {
         $this->error = $error;
 
         return $this;
     }
 
-    public function getDebug(): AbstractDataContainer
+    public function getDebug(): ArrayContainer
     {
         return $this->debug;
     }
 
-    public function setDebug(AbstractDataContainer $debug)
+    public function setDebug(ArrayContainer $debug)
     {
         $this->debug = $debug;
 
@@ -99,7 +100,7 @@ trait ExceptionTrait
 
     public function toJson(): string
     {
-        return json_encode($this->toArray(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        return JsonSerializer::make()->encode($this->toArray(), 'json');
     }
 
     protected function setErrorDebugInformation(
@@ -109,12 +110,12 @@ trait ExceptionTrait
     ) {
         $stackInfo = new StackInfo($stack);
 
-        $this->setError(ExceptionDataContainer::make([
+        $this->setError(ArrayContainer::make([
                 'code'    => $code,
                 'message' => $reason,
         ]));
 
-        $this->setDebug(ExceptionDataContainer::make([
+        $this->setDebug(ArrayContainer::make([
                 'class'  => $stackInfo->getClassNameFromLastStack(),
                 'method' => $stackInfo->getMethodNameFromLastStack(),
                 'args'   => $stackInfo->getArgsFromLastStack(),
