@@ -87,7 +87,7 @@ class RuntimeExceptionTest extends TestCase
         $this->assertEquals(true, $isValidJson, 'RuntimeException debug entry has not a valid json representation');
     }
 
-    private function getInstanceOfRuntimeExceptionForTest(...$args)
+    private function getInstanceOfRuntimeExceptionForTest()
     {
         return new RuntimeException('RuntimeException sample message');
     }
