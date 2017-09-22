@@ -1,6 +1,6 @@
 <?php
 
-namespace Solis\Breaker\Tests;
+namespace Solis\Breaker\Tests\StackInfo;
 
 use Solis\Breaker\StackInfo;
 
@@ -10,9 +10,6 @@ use Solis\Breaker\Tests\Fixtures\Dummy\DummyStack;
 class StackInfoTest extends TestCase
 {
 
-    /**
-     * @var StackInfo
-     */
     private $stackInfo;
 
     private $data;
