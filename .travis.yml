@@ -28,3 +28,6 @@ before_script:
 script:
   - vendor/bin/phpcs --standard=psr2 src/
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover tests/
+
+after_script:
+  - php vendor/bin/codacycoverage clover path/to/clover.xml
