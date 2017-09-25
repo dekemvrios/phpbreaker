@@ -15,8 +15,7 @@ cache:
 
 branches:
   only:
-  - master
-  - devop
+  - v2.x
 
 matrix:
   include:
