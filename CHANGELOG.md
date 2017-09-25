@@ -4,6 +4,11 @@ All Notable changes to phpbreaker will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.  
 
+## 2.0.3 - 2017-09-25
+
+## Changed
+- Travis ci now builds source only for v2.x branch.
+
 ## 2.0.2 - 2017-09-21
 
 ## Changed
