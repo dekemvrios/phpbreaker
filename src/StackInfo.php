@@ -17,7 +17,7 @@ use Solis\Foundation\Arrays\ArrayCollection;
  *
  * 'StackInfo' serves as a container for the 'Exception' stack, using it as a collection of data.
  *
- * @package Solis\Breaker\Helpful
+ * @package Solis\Breaker
  */
 class StackInfo
 {
@@ -76,17 +76,5 @@ class StackInfo
         $trace = $this->collection->first();
 
         return $trace->get('args') ?? [];
-    }
-
-    /**
-     * Get the last entry of the Exception stack trace array.
-     *
-     * @return array
-     */
-    public function getLastStackTrace(): array
-    {
-        $last = $this->collection->first();
-
-        return $last ? $last->toArray() : [];
     }
 }

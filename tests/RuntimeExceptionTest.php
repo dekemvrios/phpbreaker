@@ -2,10 +2,11 @@
 
 namespace Solis\Breaker\Tests;
 
-use Solis\Breaker\Exceptions\RuntimeException;
 use PHPUnit\Framework\TestCase;
 
-class IdentifyInstanceTest extends TestCase
+use Solis\Breaker\Exceptions\RuntimeException;
+
+class RuntimeExceptionTest extends TestCase
 {
     public function testCanIdentityExceptionAsThrowableInstance()
     {

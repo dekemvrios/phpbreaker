@@ -10,11 +10,8 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="RuntimeExceptionTest">
-            <directory>tests/RuntimeException</directory>
-        </testsuite>
-        <testsuite name="StackInfoTest">
-            <directory>tests/StackInfo</directory>
+        <testsuite name="Exceptions Component Test">
+            <directory>tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
