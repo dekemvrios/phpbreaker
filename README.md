@@ -22,6 +22,7 @@ The simplest usage is to thrown a implementation of Solis\Breaker\ExceptionInter
 
 ``` php
 
+    use Solis\Breaker\ExceptionInterface;
     use Solis\Exceptions\RuntimeException;
 
     try {
@@ -29,7 +30,7 @@ The simplest usage is to thrown a implementation of Solis\Breaker\ExceptionInter
     } catch (ExceptionInterface $e){
         echo $e->getMessage();
         
-        // you can get a representation of the exception as array, containing an array and debug entry
+        // you can get a representation of the exception as array, containing an error and a debug entry
         // $e->toArray();
         
         // same representation as before but in json format
