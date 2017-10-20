@@ -16,8 +16,6 @@ use Solis\Foundation\Arrays\ArrayContainer;
 /**
  * Interface ExceptionInterface.
  *
- * @since   2.0.0
- *
  * @package Solis\Breaker\Exceptions
  * @author  Rafael Becker <rafael@beecker.com.br>
  */

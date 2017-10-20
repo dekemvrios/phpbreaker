@@ -4,6 +4,13 @@ All Notable changes to phpbreaker will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.  
 
+## 2.1.0 - 2017-10-20
+
+## Added
+- Added OutOfBoundsException derived from \OutOfBoundsException.
+- Added InvalidArgumentException derived from \InvalidArgumentsException.
+- Added BadMethodCallException derived from \BadMethodCallException.
+
 ## 2.0.2 - 2017-09-21
 
 ## Changed

@@ -10,17 +10,17 @@
 
 namespace Solis\Breaker\Exceptions;
 
-use RuntimeException as StandardRuntimeException;
+use \InvalidArgumentException as StandardInvalidArgumentException;
 
 /**
- * RuntimeException.
+ * InvalidArgumentException.
  *
- * This exception should be thrown if an error occurs on runtime.
+ * This exception should be thrown if an argument is not of the expected type.
  *
  * @package Solis\Breaker\Exceptions
  * @author  Rafael Becker <rafael@beecker.com.br>
  */
-class RuntimeException extends StandardRuntimeException implements ExceptionInterface
+class InvalidArgumentException extends StandardInvalidArgumentException implements ExceptionInterface
 {
 
     use ExceptionTrait;

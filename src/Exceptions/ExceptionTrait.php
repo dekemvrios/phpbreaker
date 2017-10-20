@@ -20,8 +20,6 @@ use Solis\Foundation\Serializer\JsonSerializer;
  *
  * This trait adds specific information to the exceptions if available.
  *
- * @since   2.0.0
- *
  * @package   Solis\Breaker\Exceptions
  * @author    Rafael Becker <rafael@beecker.com.br>
  */
@@ -145,7 +143,7 @@ trait ExceptionTrait
      *
      * @return string
      */
-    public function getErrorAsJson() : string
+    public function getErrorAsJson(): string
     {
         return $this->getError()->toJson();
     }
@@ -155,7 +153,7 @@ trait ExceptionTrait
      *
      * @return string
      */
-    public function getDebugAsJson() : string
+    public function getDebugAsJson(): string
     {
         return $this->getDebug()->toJson();
     }
@@ -191,27 +189,40 @@ trait ExceptionTrait
      * @param string $reason
      * @param int    $code
      * @param array  $stack
-     *
-     * @return $this
      */
-    protected function setExceptionDetails(
-        string $reason,
-        int $code,
-        array $stack = []
-    ) {
+    protected function setExceptionDetails(string $reason, int $code, array $stack = [])
+    {
+        $this->setErrorDetails($reason, $code);
+
+        $this->setDebugDetails($stack);
+    }
+
+    /**
+     * Set the exception debug details
+     *
+     * @param array $stack
+     */
+    protected function setDebugDetails(array $stack)
+    {
         $stackInfo = new StackInfo($stack);
-
-        $this->setError(ArrayContainer::make([
-                'code'    => $code,
-                'message' => $reason,
-        ]));
-
         $this->setDebug(ArrayContainer::make([
                 'class'  => $stackInfo->getClassNameFromLastStack(),
                 'method' => $stackInfo->getMethodNameFromLastStack(),
                 'args'   => $stackInfo->getArgsFromLastStack(),
         ]));
+    }
 
-        return $this;
+    /**
+     * Set the exception error details
+     *
+     * @param string $reason
+     * @param int    $code
+     */
+    protected function setErrorDetails(string $reason, int $code)
+    {
+        $this->setError(ArrayContainer::make([
+                'code'    => $code,
+                'message' => $reason,
+        ]));
     }
 }

@@ -10,23 +10,23 @@
 
 namespace Solis\Breaker\Exceptions;
 
-use RuntimeException as StandardRuntimeException;
+use \OutOfBoundsException as StandardOutOfBoundsException;
 
 /**
- * RuntimeException.
+ * OutOfBoundsException.
  *
- * This exception should be thrown if an error occurs on runtime.
+ * This exception should be thrown if if a value is not a valid key.
  *
  * @package Solis\Breaker\Exceptions
  * @author  Rafael Becker <rafael@beecker.com.br>
  */
-class RuntimeException extends StandardRuntimeException implements ExceptionInterface
+class OutOfBoundsException extends StandardOutOfBoundsException implements ExceptionInterface
 {
 
     use ExceptionTrait;
 
     /**
-     * Create a new RuntimeException instance.
+     * Create a new OutOfBoundsException instance.
      *
      * @param string $reason
      * @param int    $code

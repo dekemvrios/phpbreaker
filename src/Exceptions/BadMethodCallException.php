@@ -10,17 +10,17 @@
 
 namespace Solis\Breaker\Exceptions;
 
-use RuntimeException as StandardRuntimeException;
+use \BadMethodCallException as StandardBadMethodCallException;
 
 /**
- * RuntimeException.
+ * StandardBadMethodCallException.
  *
- * This exception should be thrown if an error occurs on runtime.
+ * This exception should be thrown if a callback refers to an undefined method
  *
  * @package Solis\Breaker\Exceptions
  * @author  Rafael Becker <rafael@beecker.com.br>
  */
-class RuntimeException extends StandardRuntimeException implements ExceptionInterface
+class BadMethodCallException extends StandardBadMethodCallException implements ExceptionInterface
 {
 
     use ExceptionTrait;
