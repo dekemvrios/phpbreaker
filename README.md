@@ -27,9 +27,9 @@ The simplest usage is to thrown a implementation of Solis\Breaker\ExceptionInter
     try {
         thrown new RuntimeException('something bad here', 500);          
     } catch (ExceptionInterface $e){
-        $e->getMessage();
+        echo $e->getMessage();
         
-        // you can get a representation of the exception as array, containing a array and debug entry
+        // you can get a representation of the exception as array, containing an array and debug entry
         // $e->toArray();
         
         // same representation as before but in json format
