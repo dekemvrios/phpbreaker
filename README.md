@@ -18,11 +18,39 @@ composer require solis/phpbreaker
 
 ## Usage
 
+The simplest usage is to thrown a implementation of Solis\Breaker\ExceptionInterface.
+
 ``` php
 
-    // in development
-    
+    use Solis\Exceptions\RuntimeException;
+
+    try {
+        thrown new RuntimeException('something bad here', 500);          
+    } catch (ExceptionInterface $e){
+        $e->getMessage();
+        
+        // you can get a representation of the exception as array, containing a array and debug entry
+        // $e->toArray();
+        
+        // same representation as before but in json format
+        // $e->toJson();
+        
+        // get only the error entry as json representation
+        // $e->getErrorAsJson();
+        
+        // get only the debug entry as json representation
+        // $e->getDebugAsJson();
+                       
+        // its possible to set custom data to the error entry of the exception                                
+        // $e->getError()->setEntry($entry, $data);
+        
+        // the same for the debug entry
+        // $e->getDebug()->setEntry($entry, $data);                                      
+    }    
 ```
+
+All exceptions implemented in this package extends one of the SPL Exceptions. So its possible to catch normally 
+with catch \Exception.
 
 ## Change log
 
